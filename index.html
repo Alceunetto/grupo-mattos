@@ -132,8 +132,26 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 @keyframes nudge{50%{transform:translateY(5px)}}
 @media (max-height:560px){.cue,.bars,.b1 .chip{display:none}}
 
-/* hero estático: os cinco portões (iguais ao JS) */
-@media (max-width:720px),(orientation:portrait) and (max-width:1024px),(orientation:portrait) and (pointer:coarse),(orientation:landscape) and (pointer:coarse) and (max-height:560px),(prefers-reduced-motion:reduce){
+/* scrub no celular: textos recompostos para a tela em pé */
+@media (max-width:720px){
+  .stage{height:100vh;height:100svh}
+  .stage video,.poster{object-position:44% 50%;background-position:44% 50%}
+  .b1{top:15vh;right:6vw;left:6vw}
+  .b1 .chip{font-size:.6rem;letter-spacing:.08em;padding:6px 10px}
+  .b1 h1{font-size:2.7rem;margin-top:14px}
+  .b2{top:13vh;right:6vw;left:6vw}
+  .b2 h2{font-size:2.1rem}
+  .b2 p{font-size:1rem;max-width:28ch}
+  .b3{left:6vw;right:6vw;bottom:8vh}
+  .b3 h2{font-size:2.6rem}
+  .b3 p{font-size:1rem}
+  .b3 .row .btn{flex:1 1 auto}
+  .bars{bottom:3vh}
+  .bars i{height:26px;width:6px}
+}
+
+/* hero estático: só movimento reduzido e celular deitado (iguais ao JS) */
+@media (orientation:landscape) and (pointer:coarse) and (max-height:560px),(prefers-reduced-motion:reduce){
   .hero{height:auto}
   .stage{position:relative;height:auto;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;background:#0e141e url("assets/hero-ending.jpg") 28% 50%/cover no-repeat;padding:120px clamp(16px,6vw,48px) 12vh}
   .stage video,.ring,.bars,.cue,.b1,.b2,.poster{display:none}
@@ -717,7 +735,14 @@ footer .brand{color:var(--text-primary)}
     };
     requestAnimationFrame(ramp);
   }
+  function primeVideo() {
+    // iPhone: o Safari só decodifica depois de um play; mudo e em linha é permitido
+    const p = video.play();
+    if (p && p.then) p.then(() => { video.pause(); onVideoReady(); }).catch(() => {});
+  }
   function onVideoReady() {
+    if (videoReady) return;
+    video.pause();
     videoReady = true;
     shown = target = heroProgress();
     requestSeek(videoTime(shown));
@@ -731,6 +756,7 @@ footer .brand{color:var(--text-primary)}
       video.src = VIDEO_URL;
       video.addEventListener('loadeddata', onVideoReady, { once: true });
       video.load();
+      primeVideo();
       return;
     }
     const ctrl = new AbortController();
@@ -751,8 +777,9 @@ footer .brand{color:var(--text-primary)}
     clearTimeout(watchdog);
     ring.style.setProperty('--ld', 0);
     video.src = URL.createObjectURL(new Blob(chunks, { type: 'video/mp4' }));
-    video.load();
     video.addEventListener('loadeddata', onVideoReady, { once: true });
+    video.load();
+    primeVideo();
   }
   function failVideo() {
     if (stage.classList.contains('video-failed')) return;
@@ -763,9 +790,6 @@ footer .brand{color:var(--text-primary)}
 
   /* ---------- portões do hero estático (iguais ao CSS) ---------- */
   const GATES = [
-    '(max-width: 720px)',
-    '(orientation: portrait) and (max-width: 1024px)',
-    '(orientation: portrait) and (pointer: coarse)',
     '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
     '(prefers-reduced-motion: reduce)'
   ];
