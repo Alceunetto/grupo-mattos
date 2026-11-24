@@ -57,7 +57,10 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 .nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px clamp(16px,4vw,48px);background:linear-gradient(rgba(12,17,26,.82),rgba(12,17,26,0));transition:background .5s var(--ease-out),padding .5s var(--ease-out)}
 .nav.solid{background:rgba(14,20,30,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding-top:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
-.brand svg{height:30px;width:auto}
+.brand img{height:46px;width:auto;filter:drop-shadow(0 2px 8px rgba(5,7,12,.55));transform-origin:left center;transition:transform .5s var(--ease-out)}
+.nav.solid .brand img{transform:scale(.84)}
+.brand-foot img{height:64px;filter:none}
+@media (max-width:720px){.brand img{height:36px}}
 .brand-txt{display:flex;flex-direction:column;line-height:1}
 .brand-txt small{font:600 .62rem/1 var(--body);letter-spacing:.06em;color:var(--text-primary);opacity:.85}
 .brand-txt b{font:800 italic 1.3rem/1 var(--display);font-stretch:125%;letter-spacing:-.01em}
@@ -351,9 +354,8 @@ footer .brand{color:var(--text-primary)}
 <div class="grain" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
-  <a class="brand" href="#topo" aria-label="Grupo Mattos, início">
-    <svg viewBox="0 0 46 30" aria-hidden="true"><g fill="#e6b04a"><path d="M12 0h8L8 30H0z"/><path d="M25 0h8L21 30h-8z"/><path d="M38 0h8L34 30h-8z"/></g></svg>
-    <span class="brand-txt"><small>Grupo</small><b>Mattos</b></span>
+  <a class="brand" href="#topo">
+    <img src="assets/logo.webp" alt="Grupo Mattos Negócios Imobiliários, início" width="640" height="181">
   </a>
   <nav aria-label="Principal">
     <ul>
@@ -592,9 +594,8 @@ footer .brand{color:var(--text-primary)}
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="#topo" aria-label="Grupo Mattos, voltar ao início">
-      <svg viewBox="0 0 46 30" aria-hidden="true"><g fill="#e6b04a"><path d="M12 0h8L8 30H0z"/><path d="M25 0h8L21 30h-8z"/><path d="M38 0h8L34 30h-8z"/></g></svg>
-      <span class="brand-txt"><small>Grupo</small><b>Mattos</b></span>
+    <a class="brand brand-foot" href="#topo">
+      <img src="assets/logo.webp" alt="Grupo Mattos Negócios Imobiliários, voltar ao início" width="640" height="181" loading="lazy">
     </a>
     <p>Negócios imobiliários no Litoral Norte gaúcho.<br>Av. Central, 988, Xangri-lá, RS</p>
     <!-- TROCAR: número real do CRECI -->
