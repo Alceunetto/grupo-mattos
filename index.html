@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grupo Mattos | Casas de alto padrão no Litoral Norte gaúcho</title>
+<meta name="description" content="Casas e terrenos de alto padrão em Xangri-lá, Atlântida e Capão da Canoa. Há mais de 10 anos no litoral, com custos e documentos conferidos antes da sua visita.">
+<meta name="theme-color" content="#121925">
+<!-- DEPLOY STEP: URLs absolutas do site no ar (teste no GitHub Pages; trocar quando for para o domínio próprio) -->
+<meta property="og:title" content="Grupo Mattos | A melhor hora da praia">
+<meta property="og:description" content="Casas e terrenos de alto padrão em Xangri-lá, Atlântida e Capão da Canoa.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://alceunetto.github.io/grupo-mattos/assets/hero-ending.jpg">
+<meta property="og:url" content="https://alceunetto.github.io/grupo-mattos/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23121925'/%3E%3Cg fill='%23e6b04a'%3E%3Cpath d='M9 8h4l-4 16H5z'/%3E%3Cpath d='M15 8h4l-4 16h-4z'/%3E%3Cpath d='M21 8h4l-4 16h-4z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,125,600;1,125,800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#121925;--panel:#1a2331;--panel-2:#202b3c;
+  --accent:#e6b04a;--accent-hover:#f2c46a;--accent-muted:rgba(230,176,74,.28);
+  --text-secondary:#a9b1be;--text-primary:#f2ede3;
+  --wood:#a8693c;--dune:#5f6c56;--sand:#d9c9ab;
+  --line:rgba(217,201,171,.16);--line-strong:rgba(217,201,171,.42);
+  --ease-out:cubic-bezier(.22,.8,.24,1);--ease-io:cubic-bezier(.65,0,.35,1);
+  --tshadow:0 1px 2px rgba(5,7,12,.95),0 3px 12px rgba(5,7,12,.78),0 10px 44px rgba(5,7,12,.8);
+  --display:"Archivo",system-ui,sans-serif;--body:"Hanken Grotesk",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:hidden;overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;overflow-x:hidden;overflow-x:clip;background:var(--canvas);color:var(--text-primary);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased;animation:pagein .9s var(--ease-out) both}
+@keyframes pagein{from{opacity:0}to{opacity:1}}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-stretch:125%;font-weight:600;line-height:1.08;letter-spacing:-.01em;margin:0}
+p{margin:0}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.skip{position:fixed;left:16px;top:-60px;z-index:100;background:var(--accent);color:var(--canvas);padding:10px 16px;border-radius:8px;font-weight:600;text-decoration:none;transition:top .3s var(--ease-out)}
+.skip:focus{top:16px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.mono{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+.kicker{color:var(--accent);display:inline-flex;align-items:center;gap:.7em}
+.kicker::before{content:"";width:1.6em;height:1px;background:currentColor;opacity:.7}
+
+/* ambiente fixo: o anoitecer que atravessa a página */
+.ambient{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.ambient::before,.ambient::after{content:"";position:absolute;width:90vmax;height:90vmax;border-radius:50%;filter:blur(40px);opacity:.55}
+.ambient::before{left:-30vmax;top:-20vmax;background:radial-gradient(circle,rgba(56,72,104,.55),transparent 62%);animation:drift1 74s var(--ease-io) -18s infinite alternate}
+.ambient::after{right:-35vmax;bottom:-40vmax;background:radial-gradient(circle,rgba(196,128,62,.16),transparent 60%);animation:drift2 88s var(--ease-io) -30s infinite alternate}
+@keyframes drift1{to{transform:translate(22vmax,18vmax) scale(1.1)}}
+@keyframes drift2{to{transform:translate(-20vmax,-14vmax) scale(.92)}}
+.grain{position:fixed;inset:-50%;z-index:-1;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
+
+/* navegação */
+.nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px clamp(16px,4vw,48px);background:linear-gradient(rgba(12,17,26,.82),rgba(12,17,26,0));transition:background .5s var(--ease-out),padding .5s var(--ease-out)}
+.nav.solid{background:rgba(14,20,30,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding-top:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{height:30px;width:auto}
+.brand-txt{display:flex;flex-direction:column;line-height:1}
+.brand-txt small{font:600 .62rem/1 var(--body);letter-spacing:.06em;color:var(--text-primary);opacity:.85}
+.brand-txt b{font:800 italic 1.3rem/1 var(--display);font-stretch:125%;letter-spacing:-.01em}
+.nav ul{display:flex;gap:clamp(14px,2vw,28px);list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-size:.9rem;color:var(--text-secondary);transition:color .3s var(--ease-out)}
+.nav ul a:hover{color:var(--text-primary)}
+@media (max-width:980px){.nav ul{display:none}}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;font:600 .95rem/1 var(--body);text-decoration:none;border-radius:999px;padding:14px 22px;border:1px solid transparent;cursor:pointer;transition:background-color .35s var(--ease-out),color .35s var(--ease-out),border-color .35s var(--ease-out),transform .35s var(--ease-out);text-shadow:none}
+.btn-gold{background:var(--accent);color:#14100a}
+.btn-gold:hover{background:var(--accent-hover);transform:translateY(-1px)}
+.btn-ghost{color:var(--text-primary);border-color:var(--line-strong);background:rgba(18,25,37,.35)}
+.btn-ghost:hover{border-color:var(--sand);background:rgba(18,25,37,.6)}
+.btn-sm{padding:10px 16px;font-size:.85rem}
+.btn svg{width:1.1em;height:1.1em;flex:none}
+@media (pointer:coarse){.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}}
+
+/* ===== hero de scrub ===== */
+.hero{position:relative;height:460vh}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden;background:#0e141e}
+.poster,.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background-size:cover;background-position:center}
+.stage video{opacity:0;transform:translateZ(0);will-change:transform;transition:opacity .8s var(--ease-out)}
+.stage.video-ready video{opacity:1}
+.stage.video-failed video{display:none}
+.scrim{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 120% 90% at 50% 45%,rgba(8,11,18,0) 38%,rgba(8,11,18,.58) 100%)}
+.stage::after{content:"";position:absolute;inset:auto 0 0;height:22vh;pointer-events:none;background:linear-gradient(rgba(18,25,37,0),rgba(18,25,37,.55))}
+
+.band{position:absolute;z-index:2;opacity:0;visibility:hidden;pointer-events:none;text-shadow:var(--tshadow)}
+.band.on .btn{pointer-events:auto}
+.band::before{content:"";position:absolute;inset:-28% -18%;z-index:-1;pointer-events:none;opacity:calc(.25 + .75*var(--k,1));background:radial-gradient(ellipse 74% 62% at 50% 50%,rgba(6,9,15,var(--sa,.62)) 0%,rgba(6,9,15,calc(var(--sa,.62)*.66)) 46%,rgba(6,9,15,0) 76%)}
+.band .chip{display:inline-block;padding:7px 12px;background:rgba(10,14,22,.55);border:1px solid rgba(217,201,171,.22);border-radius:10px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);text-shadow:0 1px 3px rgba(5,7,12,.85);color:var(--sand)}
+.b1{top:15vh;right:7vw;text-align:right;--sa:.6}
+.b1 h1{font-size:clamp(2.6rem,6.2vw,5.6rem);margin-top:18px;max-width:12ch;margin-left:auto}
+.b2{top:12vh;right:6vw;text-align:right;--sa:.64}
+.b2 h2{font-size:clamp(2rem,3.9vw,3.6rem);max-width:15ch;margin-left:auto}
+.b2 p{margin:18px 0 0 auto;max-width:34ch;color:var(--text-primary);font-size:1.12rem}
+.b3{left:6vw;bottom:11vh;--sa:.72}
+.b3 h2{font-size:clamp(2.6rem,6vw,5.4rem);max-width:11ch}
+.b3 h2 .em{font-style:italic;font-weight:800;color:var(--accent)}
+.b3 p{margin-top:18px;max-width:42ch;font-size:1.1rem}
+.b3 .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.b3 .hz{margin-top:22px;width:min(320px,60vw)}
+
+/* entradas guiadas por --k */
+.vis{display:inline}
+.w{display:inline-block}
+/* (c) desfoque para nítido: faixa 1 */
+.blurwrap{position:relative;display:block}
+.blurwrap .soft{position:absolute;inset:0;filter:blur(12px);opacity:calc(1 - var(--k,0));pointer-events:none}
+.blurwrap .sharp{opacity:var(--k,0)}
+.b1 .chip{opacity:var(--k,0);transform:translateY(calc((1 - var(--k,0))*10px))}
+/* (f) deriva para baixo: faixa 2 */
+.b2 .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*2.8,1);opacity:var(--kc);transform:translateY(calc((1 - var(--kc))*-26px))}
+.b2 p{--ks:clamp(0,(var(--k,0) - .55)*3,1);opacity:var(--ks);transform:translateY(calc((1 - var(--ks))*-12px))}
+/* (e) subida em etapas: faixa 3 */
+.b3 .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*2.6,1);opacity:var(--kc);transform:translateY(calc((1 - var(--kc))*28px))}
+.b3 p{--ks:clamp(0,(var(--k,0) - .62)*4,1);opacity:var(--ks);transform:translateY(calc((1 - var(--ks))*14px))}
+.b3 .row{--kb:clamp(0,(var(--k,0) - .78)*5,1);opacity:var(--kb);transform:translateY(calc((1 - var(--kb))*14px))}
+
+/* progresso: as três barras do logo */
+.bars{position:absolute;right:clamp(16px,3vw,40px);bottom:5vh;z-index:3;display:flex;gap:5px;transform:skewX(-22deg);opacity:.9}
+.bars i{display:block;width:7px;height:34px;background:rgba(217,201,171,.2);position:relative;overflow:hidden}
+.bars i::after{content:"";position:absolute;inset:0;background:var(--accent);transform-origin:bottom;transform:scaleY(var(--f,0))}
+.ring{position:absolute;left:50%;bottom:5vh;z-index:3;width:44px;height:44px;margin-left:-22px;color:var(--accent);transition:opacity .6s var(--ease-out)}
+.ring circle.track{stroke:rgba(217,201,171,.18)}
+.ring circle.fill{transform:rotate(-90deg);transform-origin:center}
+.stage.video-ready .ring{opacity:0}
+.cue{position:absolute;left:50%;bottom:5vh;z-index:3;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--sand);opacity:0;transition:opacity .6s var(--ease-out);text-shadow:var(--tshadow)}
+.stage.video-ready .cue.show,.stage.video-failed .cue.show{opacity:.85}
+.cue svg{width:18px;height:18px;animation:nudge 2.4s var(--ease-io) infinite}
+@keyframes nudge{50%{transform:translateY(5px)}}
+@media (max-height:560px){.cue,.bars,.b1 .chip{display:none}}
+
+/* hero estático: os cinco portões (iguais ao JS) */
+@media (max-width:720px),(orientation:portrait) and (max-width:1024px),(orientation:portrait) and (pointer:coarse),(orientation:landscape) and (pointer:coarse) and (max-height:560px),(prefers-reduced-motion:reduce){
+  .hero{height:auto}
+  .stage{position:relative;height:auto;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;background:#0e141e url("assets/hero-ending.jpg") 28% 50%/cover no-repeat;padding:120px clamp(16px,6vw,48px) 12vh}
+  .stage video,.ring,.bars,.cue,.b1,.b2,.poster{display:none}
+  .b3{position:relative;left:auto;bottom:auto;opacity:1!important;visibility:visible!important;--k:1!important}
+  .b3 .btn{pointer-events:auto}
+}
+
+/* ===== a linha de luz que atravessa a página ===== */
+main{position:relative}
+.trail{position:absolute;left:0;right:0;top:0;height:0;z-index:3;pointer-events:none}
+.trail svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.trail path{fill:none;stroke-linecap:round}
+.trail-base{stroke:rgba(217,201,171,.1);stroke-width:1}
+.trail-line{stroke:var(--accent);stroke-width:1.4;opacity:.9}
+.trail-nodes circle{fill:var(--canvas);stroke:rgba(217,201,171,.3);stroke-width:1;transition:fill .6s var(--ease-out),stroke .6s var(--ease-out)}
+.trail-nodes circle.lit{fill:var(--accent);stroke:var(--accent)}
+.orb{position:absolute;left:0;top:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:#fff1d2;box-shadow:0 0 10px 2px rgba(242,196,106,.85),0 0 36px 8px rgba(230,176,74,.32);opacity:0;transition:opacity .5s var(--ease-out);will-change:transform}
+.orb.on{opacity:1}
+.orb::after{content:"";position:absolute;inset:-14px;border-radius:50%;background:radial-gradient(circle,rgba(242,196,106,.45),transparent 70%);animation:orbpulse 4s var(--ease-io) -1s infinite}
+@keyframes orbpulse{50%{opacity:.25;transform:scale(1.5)}}
+
+/* ===== linha do horizonte (assinatura) ===== */
+.hz{display:block;height:1px;background:linear-gradient(90deg,var(--accent),rgba(230,176,74,.15));transform-origin:left;transform:scaleX(var(--d,0));position:relative}
+.hz::after{content:"";position:absolute;right:0;top:-2px;width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:var(--d,0);box-shadow:0 0 12px var(--accent)}
+.hz.full{width:100%}
+
+/* ===== seções ===== */
+section.sec{position:relative;padding:clamp(88px,12vw,160px) clamp(16px,6vw,96px)}
+.wrap{max-width:1240px;margin:0 auto}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out);transition-delay:calc(var(--i,0)*110ms)}
+.sec.in .rv{opacity:1;transform:none}
+.sec.settled .rv{transition-delay:0s!important}
+.sec h2{font-size:clamp(2rem,4.2vw,3.5rem)}
+.lede{color:var(--text-secondary);font-size:1.12rem;max-width:46ch}
+
+/* onde */
+.onde{display:grid;grid-template-columns:minmax(260px,.9fr) 1.1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.map{position:relative;aspect-ratio:400/520;max-width:440px;width:100%;margin:0 auto}
+.map svg{width:100%;height:100%;overflow:visible}
+.map .coast{fill:none;stroke:var(--sand);stroke-width:1.6;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--d,0))}
+.map .wave{fill:none;stroke:rgba(217,201,171,.16);stroke-width:1}
+.live .map .waves{animation:waves 9s var(--ease-io) -3s infinite alternate}
+@keyframes waves{to{transform:translateX(8px)}}
+.map .pt{fill:var(--accent)}
+.map .halo{fill:var(--accent);opacity:.0;transform-box:fill-box;transform-origin:center}
+.live .map .halo{animation:halo 4.8s var(--ease-io) infinite}
+.live .map .halo.h2{animation-delay:-1.6s}.live .map .halo.h3{animation-delay:-3.2s}
+@keyframes halo{0%{opacity:.35;transform:scale(1)}70%,100%{opacity:0;transform:scale(3.4)}}
+.map text{font-family:var(--mono);font-size:11px;letter-spacing:.12em;fill:var(--text-secondary);text-transform:uppercase}
+.map text.office{fill:var(--accent)}
+.map .lbl{opacity:var(--d,0)}
+.praias{display:grid;gap:14px;margin-top:36px}
+.praia{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:baseline;padding:20px 0;border-top:1px solid var(--line)}
+.praia .n{font-family:var(--mono);font-size:.75rem;color:var(--accent)}
+.praia h3{font-size:1.35rem}
+.praia p{grid-column:2;color:var(--text-secondary)}
+.dist{display:flex;align-items:baseline;gap:12px;margin-top:28px;color:var(--sand)}
+
+/* tudo à mostra */
+.tudo-head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:56px}
+.tudo-head h2{max-width:14ch}
+.tudo-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,3vw,40px);align-items:stretch}
+.photo{position:relative;border-radius:18px;overflow:hidden;min-height:340px;border:1px solid var(--line)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo figcaption{position:absolute;left:16px;bottom:16px;padding:7px 12px;border-radius:10px;background:rgba(10,14,22,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--sand)}
+.ficha{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:clamp(24px,3vw,36px)}
+.ficha::after{content:"";position:absolute;top:0;bottom:0;left:-40%;width:30%;background:linear-gradient(100deg,transparent,rgba(242,196,106,.07),transparent);transform:translateX(0);pointer-events:none}
+.live .ficha::after{animation:glint 7s var(--ease-io) -2s infinite}
+@keyframes glint{0%{transform:translateX(0)}60%,100%{transform:translateX(560%)}}
+.ficha-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.ficha-top h3{font-size:1.2rem}
+.ficha-top span{color:var(--text-secondary)}
+.ficha ul{list-style:none;margin:0;padding:0}
+.ficha li{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:16px 0;border-bottom:1px dashed var(--line)}
+.ficha li:last-child{border-bottom:0}
+.ficha li small{display:block;color:var(--text-secondary);font-size:.88rem}
+.ok{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.ok svg{width:14px;height:14px}
+.ficha .ok{opacity:0;transform:scale(.8);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out);transition-delay:calc(400ms + var(--i,0)*160ms)}
+.sec.in .ficha .ok{opacity:1;transform:none}
+.sec.settled .ficha .ok{transition-delay:0s!important}
+
+/* como trabalhamos: acenda a casa */
+.como{text-align:center}
+.como .lede{margin:18px auto 0}
+.house{position:relative;max-width:760px;margin:48px auto 0}
+.house svg{width:100%;height:auto;display:block}
+.house .star{fill:var(--sand);opacity:.25}
+.live .house .star{animation:twinkle 5s var(--ease-io) infinite}
+.live .house .star:nth-child(2n){animation-delay:-2s}.live .house .star:nth-child(3n){animation-delay:-3.4s}
+@keyframes twinkle{50%{opacity:.7}}
+.win-glow{opacity:0}
+.holdwrap{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:28px}
+.hold{position:relative;overflow:hidden;min-width:260px;padding:16px 26px;border-radius:999px;border:1px solid var(--accent);background:rgba(230,176,74,.08);color:var(--text-primary);font:600 1rem/1 var(--body);cursor:pointer;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;touch-action:manipulation;transition:background-color .4s var(--ease-out),color .4s var(--ease-out)}
+.hold::before{content:"";position:absolute;inset:0;background:var(--accent);transform-origin:left;transform:scaleX(var(--hp,0))}
+.hold span{position:relative}
+.hold.pressing span{color:#14100a}
+.como.lit .hold{background:var(--accent);color:#14100a;cursor:default}
+.holdwrap small{color:var(--text-secondary)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,32px);margin-top:56px;text-align:left}
+.step{padding:26px;border-radius:16px;border:1px solid var(--line);background:rgba(26,35,49,.55);opacity:.38;transform:translateY(10px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out),border-color .9s var(--ease-out)}
+.como.lit .step{opacity:1;transform:none;border-color:var(--accent-muted)}
+.como.lit .step:nth-child(2){transition-delay:.18s}.como.lit .step:nth-child(3){transition-delay:.36s}
+.step .num{font-family:var(--mono);font-size:.75rem;color:var(--accent);letter-spacing:.14em}
+.step h3{font-size:1.35rem;margin:12px 0 10px}
+.step p{color:var(--text-secondary)}
+
+/* frase com o quadro final */
+.frase{position:relative;min-height:88vh;display:flex;align-items:flex-end;padding:clamp(88px,12vw,160px) clamp(16px,6vw,96px);overflow:hidden}
+.frase .bg{position:absolute;inset:0;background:url("assets/hero-ending.jpg") center 40%/cover no-repeat;transform:scale(1.02)}
+.live.frase .bg{animation:kb 34s var(--ease-io) -8s infinite alternate}
+@keyframes kb{to{transform:scale(1.08) translateY(-1.5%)}}
+.frase::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,25,37,.9) 0%,rgba(18,25,37,.1) 30%,rgba(10,14,22,.35) 55%,rgba(10,14,22,.88) 100%)}
+.frase .wrap{position:relative;z-index:2;width:100%;text-shadow:var(--tshadow)}
+.frase h2{font-size:clamp(2.4rem,6vw,5.2rem);max-width:13ch}
+.frase h2 em{font-weight:800;color:var(--accent)}
+.frase .meta{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;margin-top:28px}
+.frase .meta p{max-width:40ch}
+
+/* perguntas */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,96px);align-items:start}
+.faq-side{position:sticky;top:120px}
+.faq-side p{margin-top:18px}
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:24px 0;font:600 1.12rem/1.35 var(--body)}
+summary::-webkit-details-marker{display:none}
+summary .pm{flex:none;width:14px;height:14px;position:relative;align-self:center}
+summary .pm::before,summary .pm::after{content:"";position:absolute;left:0;top:6px;width:14px;height:2px;background:var(--accent);transition:transform .4s var(--ease-out)}
+summary .pm::after{transform:rotate(90deg)}
+details[open] summary .pm::after{transform:rotate(0)}
+details .ans{padding:0 0 26px;color:var(--text-secondary);max-width:56ch}
+details[open] .ans{animation:ansin .6s var(--ease-out)}
+@keyframes ansin{from{opacity:0;transform:translateY(-6px)}}
+
+/* contato */
+.contato{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:start}
+form.card{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:20px;padding:clamp(24px,3vw,40px)}
+.field{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.field label{font-size:.9rem;font-weight:500}
+.field label small{color:var(--text-secondary);font-weight:400}
+.field input,.field select,.field textarea{font:inherit;font-size:1rem;color:var(--text-primary);background:rgba(10,14,22,.5);border:1px solid rgba(217,201,171,.38);border-radius:12px;padding:13px 14px;transition:border-color .3s var(--ease-out),background-color .3s var(--ease-out)}
+.field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23e6b04a' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px;padding-right:38px}
+.field select option{background:var(--panel);color:var(--text-primary)}
+.field input::placeholder,.field textarea::placeholder{color:#8a92a0}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);background:rgba(10,14,22,.75)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+form .btn{width:100%;margin-top:6px}
+.success{display:none;text-align:center;padding:24px 8px}
+.success h3{font-size:1.5rem;margin:14px 0 10px}
+.success p{color:var(--text-secondary)}
+.success a{color:var(--accent)}
+form.sent .fields{display:none}
+form.sent .success{display:block;animation:ansin .7s var(--ease-out)}
+.success .ok svg{width:26px;height:26px}
+.canais{list-style:none;margin:36px 0 0;padding:0}
+.canais li{border-top:1px solid var(--line)}
+.canais a,.canais div{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:18px 0;text-decoration:none}
+.canais span.mono{color:var(--text-secondary)}
+.canais a:hover b{color:var(--accent)}
+.canais b{font-weight:500;transition:color .3s var(--ease-out)}
+.wa-cta{position:relative}
+.wa-cta::after{content:"";position:absolute;inset:-6px;border-radius:999px;box-shadow:0 0 28px rgba(230,176,74,.45);opacity:0;pointer-events:none}
+.live .wa-cta::after{animation:pulse 4.5s var(--ease-io) -1.2s infinite}
+@keyframes pulse{50%{opacity:1}}
+
+footer{padding:56px clamp(16px,6vw,96px) 40px;border-top:1px solid var(--line);color:var(--text-secondary);font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:baseline}
+footer .brand{color:var(--text-primary)}
+
+/* responsivo */
+@media (max-width:900px){
+  .onde,.tudo-grid,.faq,.contato{grid-template-columns:1fr}
+  .tudo-head{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .faq-side{position:static}
+  .map{max-width:340px}
+  .photo{min-height:260px}
+}
+@media (max-width:520px){.two{grid-template-columns:1fr}.hold{min-width:0;width:100%}}
+
+/* movimento reduzido: tudo no estado final */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important;transition-delay:0s!important}
+  .rv,.ficha .ok,.step{opacity:1!important;transform:none!important}
+  .hz,.map{--d:1!important}
+  .trail-line{stroke-dashoffset:0!important}
+  .orb{display:none}
+  .b3 .w,.b3 p,.b3 .row{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<div class="ambient" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#topo" aria-label="Grupo Mattos, início">
+    <svg viewBox="0 0 46 30" aria-hidden="true"><g fill="#e6b04a"><path d="M12 0h8L8 30H0z"/><path d="M25 0h8L21 30h-8z"/><path d="M38 0h8L34 30h-8z"/></g></svg>
+    <span class="brand-txt"><small>Grupo</small><b>Mattos</b></span>
+  </a>
+  <nav aria-label="Principal">
+    <ul>
+      <li><a href="#onde">Onde estamos</a></li>
+      <li><a href="#tudo">Tudo à mostra</a></li>
+      <li><a href="#como">Como trabalhamos</a></li>
+      <li><a href="#perguntas">Perguntas</a></li>
+    </ul>
+  </nav>
+  <a class="btn btn-gold btn-sm" href="#contato">Fale com a gente</a>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="trail" aria-hidden="true">
+    <svg><path class="trail-base"/><path class="trail-line"/><g class="trail-nodes"></g></svg>
+    <span class="orb"></span>
+  </div>
+  <section class="hero" id="topo" aria-label="Apresentação">
+    <div class="stage">
+      <div class="poster" aria-hidden="true"></div>
+      <video id="hero-video" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
+      <div class="scrim" aria-hidden="true"></div>
+
+      <div class="band b1" data-a="0" data-b="0.29">
+        <span class="chip mono">Xangri-lá · Atlântida · Capão da Canoa</span>
+        <h1>
+          <span class="sr">A melhor hora da praia.</span>
+          <span class="blurwrap" aria-hidden="true"><span class="soft">A melhor hora da praia.</span><span class="sharp">A melhor hora da praia.</span></span>
+        </h1>
+      </div>
+
+      <div class="band b2" data-a="0.32" data-b="0.66">
+        <h2 data-split>O sol vai embora. As janelas acendem.</h2>
+        <p>Há mais de 10 anos a gente escolhe casas que ficam ainda mais bonitas nessa hora.</p>
+      </div>
+
+      <div class="band b3" data-a="0.70" data-b="1">
+        <h2 data-split data-em="casa">Sua casa no Litoral Norte.</h2>
+        <p>Casas e terrenos de alto padrão em Xangri-lá, Atlântida e Capão da Canoa. Tudo conferido antes da sua visita.</p>
+        <div class="row">
+          <a class="btn btn-gold" href="https://wa.me/5551997814164?text=Ol%C3%A1%2C%20Grupo%20Mattos!%20Vi%20o%20site%20e%20quero%20conversar%20sobre%20um%20im%C3%B3vel%20no%20litoral." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7s1.8 2.8 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>
+            Conversar no WhatsApp</a>
+          <a class="btn btn-ghost" href="#como">Como trabalhamos</a>
+        </div>
+        <span class="hz" aria-hidden="true"></span>
+      </div>
+
+      <svg class="ring" viewBox="0 0 48 48" aria-hidden="true"><circle class="track" cx="24" cy="24" r="20" fill="none" stroke-width="2"/><circle class="fill" cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="126" style="stroke-dashoffset:var(--ld,126)"/></svg>
+      <div class="cue mono" aria-hidden="true">Role devagar<svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
+      <div class="bars" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <section class="sec" id="onde" aria-labelledby="onde-t">
+    <div class="wrap onde">
+      <div class="map rv hz-host" aria-hidden="true">
+        <svg viewBox="0 0 400 520">
+          <g class="waves">
+            <path class="wave" d="M262 40 C 252 160, 232 300, 196 500"/>
+            <path class="wave" d="M290 40 C 280 160, 260 300, 224 500"/>
+            <path class="wave" d="M322 40 C 312 160, 292 300, 256 500"/>
+          </g>
+          <path class="coast" pathLength="1" d="M236 10 C 232 90, 222 170, 208 250 S 178 400, 150 510"/>
+          <circle class="halo h1" cx="220" cy="160" r="6"/><circle class="pt" cx="220" cy="160" r="4.5"/>
+          <circle class="halo h2" cx="203" cy="285" r="6"/><circle class="pt" cx="203" cy="285" r="5.5"/>
+          <circle class="halo h3" cx="183" cy="380" r="6"/><circle class="pt" cx="183" cy="380" r="4.5"/>
+          <g class="lbl">
+            <text x="196" y="164" text-anchor="end">Capão da Canoa</text>
+            <text x="179" y="281" text-anchor="end" class="office">Xangri-lá</text>
+            <text x="179" y="297" text-anchor="end">nosso escritório</text>
+            <text x="160" y="384" text-anchor="end">Atlântida</text>
+            <text x="330" y="300" text-anchor="middle">Oceano</text>
+            <text x="30" y="470">← Porto Alegre</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <span class="mono kicker rv">Onde estamos</span>
+        <h2 id="onde-t" class="rv" style="--i:1;margin-top:18px">Três praias que a gente conhece de olhos fechados.</h2>
+        <p class="lede rv" style="--i:2;margin-top:20px">Perto o bastante para descer na sexta. Longe o bastante para esquecer a cidade.</p>
+        <div class="praias">
+          <div class="praia rv" style="--i:3"><span class="n">01</span><h3>Xangri-lá</h3><p>Nosso endereço. Condomínios fechados, ruas calmas e a praia a poucos minutos.</p></div>
+          <div class="praia rv" style="--i:4"><span class="n">02</span><h3>Atlântida</h3><p>Condomínios com lago, clube e o movimento bom do verão.</p></div>
+          <div class="praia rv" style="--i:5"><span class="n">03</span><h3>Capão da Canoa</h3><p>Comércio, serviços e vida o ano inteiro, não só em janeiro.</p></div>
+        </div>
+        <div class="dist rv" style="--i:6"><span class="mono">Porto Alegre</span><span class="hz" style="flex:1" aria-hidden="true"></span><span class="mono">pouco mais de 100 km</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="tudo" aria-labelledby="tudo-t">
+    <div class="wrap">
+      <div class="tudo-head">
+        <div>
+          <span class="mono kicker rv">Tudo à mostra</span>
+          <h2 id="tudo-t" class="rv" style="--i:1;margin-top:18px">Antes da visita, você já sabe tudo.</h2>
+        </div>
+        <p class="lede rv" style="--i:2">Anúncio com “não informado” não sai daqui. Cada imóvel chega até você com os custos e os documentos conferidos por nós. Sem surpresa depois da chave.</p>
+      </div>
+      <div class="tudo-grid">
+        <figure class="photo rv" style="--i:2;margin:0">
+          <img src="assets/janelas.jpg" alt="Casa moderna de madeira e vidro com as janelas acesas ao anoitecer, de frente para as dunas" width="760" height="400" loading="lazy">
+          <figcaption class="mono">Janelas acesas, 19h40</figcaption>
+        </figure>
+        <div class="ficha rv" style="--i:3">
+          <div class="ficha-top"><h3>Ficha do imóvel</h3><span class="mono">conferida por nós</span></div>
+          <ul>
+            <li style="--i:0"><div>Taxa de condomínio<small>O valor real, confirmado com a administradora</small></div><span class="ok"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Conferido</span></li>
+            <li style="--i:1"><div>IPTU do ano<small>Quanto é e se está em dia</small></div><span class="ok"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Conferido</span></li>
+            <li style="--i:2"><div>Matrícula atualizada<small>Metragem, dono e pendências no papel</small></div><span class="ok"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Conferido</span></li>
+            <li style="--i:3"><div>Certidões do vendedor<small>Para nenhuma dívida vir junto com a casa</small></div><span class="ok"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Conferido</span></li>
+            <li style="--i:4"><div>Regras do condomínio<small>Temporada, obras e animais de estimação</small></div><span class="ok"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Conferido</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec como" id="como" aria-labelledby="como-t">
+    <div class="wrap">
+      <span class="mono kicker rv">Como trabalhamos</span>
+      <h2 id="como-t" class="rv" style="--i:1;margin-top:18px">Segure o botão e acenda a casa.</h2>
+      <p class="lede rv" style="--i:2">Três passos, do primeiro contato até a chave na sua mão.</p>
+      <div class="house rv" style="--i:3" aria-hidden="true">
+        <svg viewBox="0 0 760 300" id="casa-svg">
+          <defs>
+            <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6cf82"/><stop offset="1" stop-color="#d9963e"/></linearGradient>
+            <filter id="bloom" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter>
+          </defs>
+          <g><circle class="star" cx="80" cy="30" r="1.4"/><circle class="star" cx="190" cy="56" r="1"/><circle class="star" cx="330" cy="22" r="1.2"/><circle class="star" cx="560" cy="40" r="1.4"/><circle class="star" cx="680" cy="70" r="1"/><circle class="star" cx="620" cy="18" r="1"/><circle class="star" cx="450" cy="62" r="1"/></g>
+          <!-- terreno e deck -->
+          <path d="M0 262 H760" stroke="rgba(217,201,171,.35)" stroke-width="1"/>
+          <rect x="140" y="250" width="520" height="12" fill="#2a3446"/>
+          <!-- casa -->
+          <rect x="150" y="96" width="250" height="16" fill="#3a465a"/>
+          <rect x="300" y="128" width="380" height="14" fill="#3a465a"/>
+          <rect x="170" y="112" width="210" height="138" fill="#1d2636"/>
+          <rect x="400" y="142" width="250" height="108" fill="#1d2636"/>
+          <rect x="400" y="96" width="110" height="32" fill="#5a3a22"/>
+          <!-- janelas apagadas -->
+          <g fill="#151d2b" stroke="rgba(217,201,171,.25)" stroke-width="1">
+            <rect x="186" y="128" width="178" height="58"/>
+            <rect x="186" y="196" width="178" height="54"/>
+            <rect x="420" y="156" width="210" height="94"/>
+          </g>
+          <!-- janelas acesas (uma por passo) -->
+          <g class="win-glow" data-i="0"><rect x="176" y="118" width="198" height="78" fill="url(#glow)" filter="url(#bloom)" opacity=".55"/><rect x="186" y="128" width="178" height="58" fill="url(#glow)"/><path d="M245 128v58M305 128v58" stroke="#1d2636" stroke-width="3"/></g>
+          <g class="win-glow" data-i="1"><rect x="176" y="186" width="198" height="74" fill="url(#glow)" filter="url(#bloom)" opacity=".55"/><rect x="186" y="196" width="178" height="54" fill="url(#glow)"/><path d="M245 196v54M305 196v54" stroke="#1d2636" stroke-width="3"/></g>
+          <g class="win-glow" data-i="2"><rect x="410" y="146" width="230" height="114" fill="url(#glow)" filter="url(#bloom)" opacity=".55"/><rect x="420" y="156" width="210" height="94" fill="url(#glow)"/><path d="M490 156v94M560 156v94" stroke="#1d2636" stroke-width="3"/></g>
+          <!-- piscina com reflexo -->
+          <rect x="140" y="268" width="460" height="22" fill="#16263a"/>
+          <g class="win-glow" data-i="2" style="mix-blend-mode:screen"><rect x="420" y="270" width="160" height="4" fill="#e6b04a" opacity=".5"/><rect x="440" y="279" width="110" height="3" fill="#e6b04a" opacity=".35"/></g>
+        </svg>
+      </div>
+      <div class="holdwrap rv" style="--i:4">
+        <button class="hold" id="acender" type="button" aria-describedby="hold-hint"><span>Segure para acender</span></button>
+        <small id="hold-hint">Pressione e segure até as três janelas acenderem.<span class="sr"> Com o teclado, segure Enter ou Espaço.</span></small>
+      </div>
+      <ol class="steps" style="list-style:none;padding:0">
+        <li class="step"><span class="num">01</span><h3>Escutamos</h3><p>Você conta como quer viver o verão. A gente filtra o que não combina com você.</p></li>
+        <li class="step"><span class="num">02</span><h3>Conferimos</h3><p>Custos, matrícula e regras do condomínio checados antes de você sair de casa.</p></li>
+        <li class="step"><span class="num">03</span><h3>Acompanhamos</h3><p>Da proposta à escritura, com alguém de confiança aqui no litoral.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="frase sec-plain" id="casa" aria-labelledby="casa-t">
+    <div class="bg" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="mono kicker">Desde sempre por aqui</span>
+      <h2 id="casa-t" style="margin-top:18px">Há mais de <em>10 anos</em> no litoral.</h2>
+      <span class="hz" style="margin-top:28px;width:min(520px,80%)" aria-hidden="true"></span>
+      <div class="meta">
+        <p>Nosso escritório fica na Av. Central, 988, em Xangri-lá. Passe para um café e uma conversa sem compromisso.</p>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Central%2C%20988%2C%20Xangri-l%C3%A1%2C%20RS" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="perguntas" aria-labelledby="faq-t">
+    <div class="wrap faq">
+      <div class="faq-side">
+        <span class="mono kicker rv">Perguntas</span>
+        <h2 id="faq-t" class="rv" style="--i:1;margin-top:18px">O que todo mundo pergunta antes de comprar.</h2>
+        <p class="lede rv" style="--i:2">Ficou alguma dúvida? Pergunte direto pelo WhatsApp.</p>
+      </div>
+      <div>
+        <details class="rv" style="--i:1"><summary>Quanto vou pagar de condomínio e IPTU?<span class="pm" aria-hidden="true"></span></summary><div class="ans">Você recebe os valores reais antes da visita, confirmados com a administradora e com a prefeitura. Se o anúncio não informa, a gente descobre.</div></details>
+        <details class="rv" style="--i:2"><summary>Como sei que a documentação está em ordem?<span class="pm" aria-hidden="true"></span></summary><div class="ans">Puxamos a matrícula atualizada e as certidões do imóvel e do vendedor antes de qualquer proposta. Se aparecer pendência, você fica sabendo na hora.</div></details>
+        <details class="rv" style="--i:3"><summary>Moro em Porto Alegre. Preciso descer toda hora?<span class="pm" aria-hidden="true"></span></summary><div class="ans">Não. Mandamos vídeos e fotos atuais de cada imóvel, e você só desce para ver o que realmente vale a viagem.</div></details>
+        <details class="rv" style="--i:4"><summary>Posso alugar a casa na temporada?<span class="pm" aria-hidden="true"></span></summary><div class="ans">Depende do regulamento de cada condomínio. Conferimos as regras antes, para você não ter surpresa depois da compra.</div></details>
+        <details class="rv" style="--i:5"><summary>Vocês também vendem o meu imóvel?<span class="pm" aria-hidden="true"></span></summary><div class="ans">Sim. Avaliamos o preço pelo que realmente vende na região e cuidamos das visitas para você.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contato" aria-labelledby="contato-t">
+    <div class="wrap contato">
+      <div>
+        <span class="mono kicker rv">Contato</span>
+        <h2 id="contato-t" class="rv" style="--i:1;margin-top:18px">Conte como é a casa que você imagina.</h2>
+        <p class="lede rv" style="--i:2;margin-top:20px">Responda quatro coisas e o WhatsApp abre com a mensagem pronta. A gente responde no mesmo dia.</p>
+        <ul class="canais rv" style="--i:3">
+          <li><a class="wa-link" href="https://wa.me/5551997814164" target="_blank" rel="noopener"><span class="mono">WhatsApp</span><b>(51) 99781-4164</b></a></li>
+          <li><a href="mailto:contato@grupomattos.com.br"><span class="mono">E-mail</span><b>contato@grupomattos.com.br</b></a></li>
+          <li><a href="https://www.instagram.com/grupomattos__/" target="_blank" rel="noopener"><span class="mono">Instagram</span><b>@grupomattos__</b></a></li>
+          <li><div><span class="mono">Escritório</span><b>Av. Central, 988, Xangri-lá, RS</b></div></li>
+        </ul>
+      </div>
+      <form class="card rv" style="--i:2" id="form" novalidate>
+        <div class="fields">
+          <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" autocomplete="name" required placeholder="Como podemos te chamar?"></div>
+          <div class="two">
+            <div class="field"><label for="f-tipo">O que você procura</label>
+              <select id="f-tipo" name="tipo"><option>Casa em condomínio</option><option>Terreno</option><option>Apartamento</option><option>Quero vender meu imóvel</option></select></div>
+            <div class="field"><label for="f-praia">Praia</label>
+              <select id="f-praia" name="praia"><option>Xangri-lá</option><option>Atlântida</option><option>Capão da Canoa</option><option>Ainda estou decidindo</option></select></div>
+          </div>
+          <div class="field"><label for="f-faixa">Faixa de valor</label>
+            <select id="f-faixa" name="faixa"><option>Prefiro conversar</option><option>Até R$ 1 milhão</option><option>Entre R$ 1 e 3 milhões</option><option>Acima de R$ 3 milhões</option></select></div>
+          <div class="field"><label for="f-msg">Algo mais? <small>(opcional)</small></label><textarea id="f-msg" name="msg" rows="3" placeholder="Número de quartos, pé na areia, perto do clube..."></textarea></div>
+          <button class="btn btn-gold wa-cta" type="submit">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7s1.8 2.8 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>
+            Abrir no WhatsApp</button>
+        </div>
+        <div class="success" tabindex="-1" id="ok">
+          <span class="ok"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
+          <h3>O WhatsApp abriu com a sua mensagem.</h3>
+          <p>É só tocar em enviar. Não abriu? <a id="ok-link" href="https://wa.me/5551997814164" target="_blank" rel="noopener">Toque aqui</a>.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Grupo Mattos, voltar ao início">
+      <svg viewBox="0 0 46 30" aria-hidden="true"><g fill="#e6b04a"><path d="M12 0h8L8 30H0z"/><path d="M25 0h8L21 30h-8z"/><path d="M38 0h8L34 30h-8z"/></g></svg>
+      <span class="brand-txt"><small>Grupo</small><b>Mattos</b></span>
+    </a>
+    <p>Negócios imobiliários no Litoral Norte gaúcho.<br>Av. Central, 988, Xangri-lá, RS</p>
+    <!-- TROCAR: número real do CRECI -->
+    <p class="mono">CRECI/RS 00000-J · © 2026 Grupo Mattos</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+  const smoothstep = (p, e0, e1) => { const t = clamp((p - e0) / (e1 - e0), 0, 1); return t * t * (3 - 2 * t); };
+  const reduceMQ = matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* ---------- divisão do texto (uma vez) ---------- */
+  function rng(seed) { let s = seed >>> 0; return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296; }
+  $$('[data-split]').forEach((el, n) => {
+    const text = el.textContent.trim();
+    const r = rng(n * 977 + 13);
+    const em = el.dataset.em;
+    el.textContent = '';
+    const sr = document.createElement('span'); sr.className = 'sr'; sr.textContent = text;
+    const vis = document.createElement('span'); vis.className = 'vis'; vis.setAttribute('aria-hidden', 'true');
+    const words = text.split(/\s+/);
+    words.forEach((w, i) => {
+      const s = document.createElement('span');
+      s.className = 'w';
+      s.style.setProperty('--th', (i / words.length * 0.5 + r() * 0.05).toFixed(3));
+      if (em && w.replace(/[.,]/g, '') === em) s.classList.add('em');
+      s.textContent = w;
+      vis.append(s);
+      if (i < words.length - 1) vis.append(' ');
+    });
+    el.append(sr, vis);
+  });
+
+  /* ---------- navegação sólida depois do hero ---------- */
+  const nav = $('#nav');
+  let navSolid = null;
+
+  /* ---------- hero ---------- */
+  const hero = $('#topo'), stage = $('.stage', hero), video = $('#hero-video');
+  const poster = $('.poster', hero), ring = $('.ring', hero), cue = $('.cue', hero);
+  const barEls = $$('.bars i', hero);
+  const bands = $$('.band', hero).map(el => ({ el, a: +el.dataset.a, b: +el.dataset.b, op: -1, k: -1 }));
+  const F = 0.05;
+  const VIDEO_URL = 'assets/hero-scrub.mp4', VIDEO_BYTES = 4269104, VIDEO_END = 0.92;
+  let loadK = 0, heroOnScreen = true, scrubOn = false;
+  const barCache = [-1, -1, -1];
+  let cueShown = null;
+
+  function heroProgress() {
+    const r = hero.getBoundingClientRect();
+    const range = hero.offsetHeight - innerHeight;
+    return range > 0 ? clamp(-r.top / range, 0, 1) : 0;
+  }
+
+  function updateCaptions(p) {
+    for (let i = 0; i < bands.length; i++) {
+      const b = bands[i], first = i === 0, last = i === bands.length - 1;
+      let op = (first ? 1 : smoothstep(p, b.a, b.a + F)) * (last ? 1 : 1 - smoothstep(p, b.b - F, b.b));
+      op = Math.round(op * 1000) / 1000;
+      let k = clamp((p - b.a) / (+b.el.dataset.ramp || Math.min(0.06, (b.b - b.a) * 0.35)), 0, 1);
+      if (first) k = Math.max(k, loadK);
+      if (op !== b.op && (Math.abs(op - b.op) > 0.004 || op === 0 || op === 1)) {
+        b.op = op;
+        b.el.style.opacity = op;
+        b.el.style.visibility = op <= 0 ? 'hidden' : 'visible';
+        b.el.classList.toggle('on', op > 0.5);
+      }
+      if (k !== b.k && (Math.abs(k - b.k) > 0.008 || k === 0 || k === 1)) {
+        b.k = k;
+        b.el.style.setProperty('--k', k.toFixed(3));
+      }
+    }
+    for (let i = 0; i < 3; i++) {
+      const f = Math.round(clamp(p * 3 - i, 0, 1) * 100) / 100;
+      if (f !== barCache[i]) { barCache[i] = f; barEls[i].style.setProperty('--f', f); }
+    }
+    const show = p < 0.03;
+    if (show !== cueShown) { cueShown = show; cue.classList.toggle('show', show); }
+  }
+
+  /* seeks travados */
+  let seekBusy = false, pendingTime = null;
+  function requestSeek(t) {
+    if (!video.duration || !isFinite(video.duration)) return;
+    if (seekBusy) { pendingTime = t; return; }
+    if (Math.abs(video.currentTime - t) < 0.001) return;
+    seekBusy = true;
+    video.currentTime = t;
+  }
+  video.addEventListener('seeked', () => {
+    seekBusy = false;
+    if (pendingTime !== null) { const t = pendingTime; pendingTime = null; requestSeek(t); }
+  });
+  video.addEventListener('error', () => { seekBusy = false; pendingTime = null; failVideo(); });
+
+  const videoTime = s => clamp(s / VIDEO_END, 0, 1) * (video.duration || 0) * 0.999;
+
+  /* loop rAF que descansa */
+  let target = 0, shown = 0, rafId = null, lastTick = 0;
+  function tick(now) {
+    const dt = Math.min(100, now - (lastTick || now));
+    lastTick = now;
+    shown += (target - shown) * (1 - Math.pow(1 - 0.16, dt / 16.667));
+    if (Math.abs(target - shown) < 0.0005) { shown = target; rafId = null; lastTick = 0; }
+    else rafId = requestAnimationFrame(tick);
+    requestSeek(videoTime(shown));
+    updateCaptions(shown);
+  }
+  function onScroll() {
+    target = heroProgress();
+    if (rafId === null && heroOnScreen) rafId = requestAnimationFrame(tick);
+  }
+  new IntersectionObserver(([e]) => {
+    heroOnScreen = e.isIntersecting;
+    if (heroOnScreen && scrubOn) onScroll();
+  }).observe(hero);
+
+  /* carregador do vídeo: pôster primeiro, depois o Blob com anel */
+  let heroInit = false, videoReady = false;
+  function initHeroOnce() {
+    if (heroInit) return; heroInit = true;
+    poster.style.backgroundImage = "url('assets/hero-poster.jpg')";
+    let started = false;
+    const start = () => { if (started) return; started = true; loadHeroBlob().catch(failVideo); };
+    const img = new Image(); img.onload = start; img.onerror = start; img.src = 'assets/hero-poster.jpg';
+    setTimeout(start, 4000);
+    // rampa de montagem da faixa 1, só no carregamento
+    const t0 = performance.now();
+    const ramp = now => {
+      loadK = clamp((now - t0 - 250) / 1100, 0, 1);
+      updateCaptions(scrubOn ? shown : 1);
+      if (loadK < 1) requestAnimationFrame(ramp);
+    };
+    requestAnimationFrame(ramp);
+  }
+  function onVideoReady() {
+    videoReady = true;
+    shown = target = heroProgress();
+    requestSeek(videoTime(shown));
+    stage.classList.add('video-ready');
+  }
+  async function loadHeroBlob() {
+    if (location.protocol === 'file:') {
+      // aberto com dois cliques: o arquivo local já permite buscar em qualquer ponto
+      ring.style.setProperty('--ld', 0);
+      video.preload = 'auto';
+      video.src = VIDEO_URL;
+      video.addEventListener('loadeddata', onVideoReady, { once: true });
+      video.load();
+      return;
+    }
+    const ctrl = new AbortController();
+    let watchdog = setTimeout(() => ctrl.abort(), 20000);
+    const res = await fetch(VIDEO_URL, { priority: 'low', signal: ctrl.signal });
+    if (!res.ok || !res.body) throw new Error('http ' + res.status);
+    const total = Number(res.headers.get('Content-Length')) || VIDEO_BYTES;
+    const reader = res.body.getReader();
+    const chunks = []; let got = 0, lastRing = 0;
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      clearTimeout(watchdog); watchdog = setTimeout(() => ctrl.abort(), 20000);
+      chunks.push(value); got += value.length;
+      const frac = Math.min(1, got / total), now = performance.now();
+      if (now - lastRing > 100 || frac === 1) { lastRing = now; ring.style.setProperty('--ld', Math.round(126 * (1 - frac))); }
+    }
+    clearTimeout(watchdog);
+    ring.style.setProperty('--ld', 0);
+    video.src = URL.createObjectURL(new Blob(chunks, { type: 'video/mp4' }));
+    video.load();
+    video.addEventListener('loadeddata', onVideoReady, { once: true });
+  }
+  function failVideo() {
+    if (stage.classList.contains('video-failed')) return;
+    stage.classList.add('video-failed');
+    ring.style.display = 'none';
+    cueShown = null; updateCaptions(heroProgress());
+  }
+
+  /* ---------- portões do hero estático (iguais ao CSS) ---------- */
+  const GATES = [
+    '(max-width: 720px)',
+    '(orientation: portrait) and (max-width: 1024px)',
+    '(orientation: portrait) and (pointer: coarse)',
+    '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
+    '(prefers-reduced-motion: reduce)'
+  ];
+  const MQLS = GATES.map(q => matchMedia(q));
+  function enableScrub() {
+    if (scrubOn) return; scrubOn = true;
+    initHeroOnce();
+    addEventListener('scroll', onScroll, { passive: true });
+    bands.forEach(b => { b.op = -1; b.k = -1; b.el.style.removeProperty('opacity'); });
+    barCache.fill(-1); cueShown = null;
+    unpinFinalStates();
+    shown = target = heroProgress();
+    updateCaptions(shown);
+    onScroll();
+  }
+  function disableScrub() {
+    if (!scrubOn) return; scrubOn = false;
+    removeEventListener('scroll', onScroll);
+    if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; lastTick = 0; }
+    bands.forEach(b => { b.el.style.removeProperty('opacity'); b.el.style.removeProperty('visibility'); b.el.style.removeProperty('--k'); b.op = -1; b.k = -1; });
+  }
+  function applyHeroMode() { MQLS.some(m => m.matches) ? disableScrub() : enableScrub(); }
+  MQLS.forEach(m => m.addEventListener('change', applyHeroMode));
+
+  /* ---------- seções: entradas, elementos vivos, linhas ---------- */
+  const secs = $$('.sec, .frase');
+  const entryIO = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting && !e.target.classList.contains('in')) {
+      e.target.classList.add('in');
+      setTimeout(() => e.target.classList.add('settled'), 2200);
+    }
+  }), { threshold: 0.14 });
+  const liveIO = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('live', e.isIntersecting)));
+  secs.forEach(s => { entryIO.observe(s); liveIO.observe(s); });
+
+  const lines = $$('.sec .hz, .frase .hz, .hz-host');
+  const visibleLines = new Set();
+  const lineCache = new Map();
+  const lineIO = new IntersectionObserver(es => { es.forEach(e => e.isIntersecting ? visibleLines.add(e.target) : visibleLines.delete(e.target)); queueLines(); });
+  lines.forEach(l => lineIO.observe(l));
+  let lineRaf = null;
+  function drawLines() {
+    lineRaf = null;
+    const vh = innerHeight;
+    visibleLines.forEach(el => {
+      const r = el.getBoundingClientRect();
+      const d = Math.round(clamp((vh * 0.95 - r.top) / (vh * 0.55), 0, 1) * 200) / 200;
+      if (lineCache.get(el) !== d) { lineCache.set(el, d); el.style.setProperty('--d', d); }
+    });
+    const solid = scrubOn ? scrollY > hero.offsetHeight - innerHeight * 1.05 : scrollY > 40;
+    if (solid !== navSolid) { navSolid = solid; nav.classList.toggle('solid', solid); }
+  }
+  const queueLines = () => { if (lineRaf === null) lineRaf = requestAnimationFrame(drawLines); };
+  addEventListener('scroll', queueLines, { passive: true });
+  addEventListener('resize', queueLines);
+  // a linha do assentamento acompanha a faixa 3
+  const settleLine = $('.b3 .hz');
+
+  /* ---------- a linha de luz que atravessa a página ---------- */
+  const trail = $('.trail'), tBase = $('.trail-base', trail), tLine = $('.trail-line', trail);
+  const tNodes = $('.trail-nodes', trail), orb = $('.orb', trail);
+  const trailSecs = ['#onde', '#tudo', '#como', '#casa', '#perguntas', '#contato'].map(s => $(s));
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  let T = null, tRaf = null, tLastL = -1, tOrbOn = null;
+  function buildTrail() {
+    const main = $('#main');
+    const mainTop = main.getBoundingClientRect().top + scrollY;
+    const tops = trailSecs.map(s => s.getBoundingClientRect().top + scrollY - mainTop);
+    const lastSec = trailSecs[trailSecs.length - 1];
+    const top = tops[0];
+    const bottom = lastSec.getBoundingClientRect().bottom + scrollY - mainTop - 70;
+    const W = main.clientWidth, H = bottom - top;
+    const gutter = parseFloat(getComputedStyle(trailSecs[0]).paddingLeft) || 16;
+    const xL = Math.max(7, gutter * 0.45), xR = W - xL, CROSS = 60;
+    let side = 0, d = `M${xL},0`;
+    const nodeY = [];
+    for (let i = 1; i < tops.length; i++) {
+      const y = tops[i] - top, from = side ? xR : xL, to = side ? xL : xR;
+      d += ` L${from},${y - CROSS} C${from},${y} ${to},${y} ${to},${y + CROSS}`;
+      nodeY.push(y);
+      side = 1 - side;
+    }
+    d += ` L${side ? xR : xL},${H}`;
+    trail.style.top = top + 'px';
+    trail.style.height = H + 'px';
+    tBase.setAttribute('d', d); tLine.setAttribute('d', d);
+    const len = tLine.getTotalLength();
+    tLine.style.strokeDasharray = len;
+    // amostras: y cresce sempre ao longo do caminho, então a busca é binária
+    const n = Math.ceil(len / 6), xs = new Float32Array(n + 1), ys = new Float32Array(n + 1), ls = new Float32Array(n + 1);
+    for (let i = 0; i <= n; i++) { const l = len * i / n, p = tLine.getPointAtLength(l); xs[i] = p.x; ys[i] = p.y; ls[i] = l; }
+    tNodes.textContent = '';
+    const nodes = nodeY.map(y => {
+      const c = document.createElementNS(SVGNS, 'circle');
+      c.setAttribute('cx', W / 2); c.setAttribute('cy', y); c.setAttribute('r', 3.5);
+      tNodes.append(c);
+      return { el: c, y, lit: false };
+    });
+    T = { top, len, xs, ys, ls, n, nodes, mainTop };
+    tLastL = -1;
+    updateTrail();
+  }
+  function updateTrail() {
+    tRaf = null;
+    if (!T) return;
+    const tipY = scrollY + innerHeight * 0.62 - T.mainTop - T.top;
+    let i = 0;
+    if (tipY > 0) {
+      let lo = 0, hi = T.n;
+      while (lo < hi) { const m = (lo + hi) >> 1; if (T.ys[m] < tipY) lo = m + 1; else hi = m; }
+      i = lo;
+    }
+    const L = Math.round(T.ls[i]);
+    if (L !== tLastL) {
+      tLastL = L;
+      tLine.style.strokeDashoffset = T.len - L;
+      orb.style.transform = `translate(${T.xs[i].toFixed(1)}px,${T.ys[i].toFixed(1)}px)`;
+      T.nodes.forEach(nd => { const on = T.ys[i] >= nd.y; if (on !== nd.lit) { nd.lit = on; nd.el.classList.toggle('lit', on); } });
+    }
+    const on = tipY > 0 && i < T.n;
+    if (on !== tOrbOn) { tOrbOn = on; orb.classList.toggle('on', on); }
+  }
+  addEventListener('scroll', () => { if (tRaf === null) tRaf = requestAnimationFrame(updateTrail); }, { passive: true });
+  let tBuild = null;
+  const queueBuild = () => { clearTimeout(tBuild); tBuild = setTimeout(buildTrail, 120); };
+  new ResizeObserver(queueBuild).observe($('#main'));
+  addEventListener('resize', queueBuild);
+  if (document.fonts) document.fonts.ready.then(queueBuild);
+
+  /* ---------- momento interativo: acenda a casa ---------- */
+  const como = $('#como'), holdBtn = $('#acender'), holdLabel = $('span', holdBtn);
+  const wins = $$('.win-glow', $('#casa-svg'));
+  let hp = 0, holding = false, hraf = null, hlast = 0, lit = false, litByPin = false;
+  const winCache = wins.map(() => -1);
+  function renderHold() {
+    wins.forEach((w, n) => {
+      const i = +w.dataset.i;
+      const o = Math.round(clamp(hp * 3 - i, 0, 1) * 100) / 100;
+      if (o !== winCache[n]) { winCache[n] = o; w.style.opacity = o; }
+    });
+    holdBtn.style.setProperty('--hp', hp.toFixed(3));
+  }
+  function holdStep(now) {
+    const dt = Math.min(64, now - (hlast || now)); hlast = now;
+    hp = clamp(hp + (holding ? dt / 1700 : -dt / 900), 0, 1);
+    renderHold();
+    if (hp >= 1) { hraf = null; hlast = 0; lightUp(false); return; }
+    if (hp <= 0 && !holding) { hraf = null; hlast = 0; return; }
+    hraf = requestAnimationFrame(holdStep);
+  }
+  function lightUp(byPin) {
+    if (lit) return;
+    lit = true; litByPin = byPin; holding = false; hp = 1; renderHold();
+    como.classList.add('lit'); holdBtn.classList.remove('pressing');
+    holdLabel.textContent = 'Casa acesa';
+    holdBtn.setAttribute('aria-pressed', 'true');
+  }
+  function startHold(e) {
+    if (lit) return;
+    if (e && e.pointerId !== undefined) { try { holdBtn.setPointerCapture(e.pointerId); } catch (_) {} }
+    holding = true; holdBtn.classList.add('pressing');
+    if (hraf === null) hraf = requestAnimationFrame(holdStep);
+  }
+  function stopHold() {
+    if (!holding) return;
+    holding = false; holdBtn.classList.remove('pressing');
+    if (hraf === null && !lit) hraf = requestAnimationFrame(holdStep);
+  }
+  holdBtn.addEventListener('pointerdown', e => { e.preventDefault(); startHold(e); });
+  ['pointerup', 'pointercancel'].forEach(t => holdBtn.addEventListener(t, stopHold));
+  holdBtn.addEventListener('contextmenu', e => e.preventDefault());
+  holdBtn.addEventListener('keydown', e => { if ((e.key === ' ' || e.key === 'Enter') && !e.repeat) { e.preventDefault(); startHold(); } });
+  holdBtn.addEventListener('keyup', e => { if (e.key === ' ' || e.key === 'Enter') stopHold(); });
+  holdBtn.addEventListener('blur', stopHold);
+
+  /* ---------- movimento reduzido ao vivo ---------- */
+  function pinToFinalStates() {
+    secs.forEach(s => s.classList.add('in', 'settled'));
+    lightUp(true);
+    if (hraf !== null) { cancelAnimationFrame(hraf); hraf = null; }
+  }
+  function unpinFinalStates() {
+    if (litByPin) {
+      lit = false; litByPin = false; hp = 0; winCache.fill(-1); renderHold();
+      como.classList.remove('lit'); holdLabel.textContent = 'Segure para acender'; holdBtn.removeAttribute('aria-pressed');
+    }
+    lineCache.clear(); queueLines();
+  }
+  reduceMQ.addEventListener('change', e => { if (e.matches) pinToFinalStates(); else applyHeroMode(); });
+
+  /* ---------- formulário para o WhatsApp ---------- */
+  const form = $('#form');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const nome = form.nome.value.trim();
+    if (!nome) { form.nome.setAttribute('aria-invalid', 'true'); form.nome.focus(); form.nome.placeholder = 'Escreva seu nome para continuar'; return; }
+    form.nome.removeAttribute('aria-invalid');
+    const linhas = [
+      `Olá, Grupo Mattos! Meu nome é ${nome}.`,
+      `Procuro: ${form.tipo.value}`,
+      `Praia: ${form.praia.value}`,
+      `Faixa de valor: ${form.faixa.value}`
+    ];
+    const extra = form.msg.value.trim();
+    if (extra) linhas.push('', extra);
+    const url = 'https://wa.me/5551997814164?text=' + encodeURIComponent(linhas.join('\n'));
+    $('#ok-link').href = url;
+    window.open(url, '_blank', 'noopener');
+    form.classList.add('sent');
+    $('#ok').focus();
+  });
+
+  /* ---------- pausa em aba escondida ---------- */
+  document.addEventListener('visibilitychange', () => document.body.classList.toggle('paused', document.hidden));
+
+  /* ---------- início ---------- */
+  applyHeroMode();
+  if (!scrubOn) { loadK = 1; }
+  if (reduceMQ.matches) pinToFinalStates();
+  drawLines();
+  // a linha do assentamento: desenhada pela faixa 3 no scrub, cheia no estático
+  if (settleLine) {
+    const syncSettle = () => {
+      const d = scrubOn ? clamp((heroProgress() - 0.8) / 0.12, 0, 1) : 1;
+      settleLine.style.setProperty('--d', Math.round(d * 100) / 100);
+    };
+    addEventListener('scroll', syncSettle, { passive: true });
+    MQLS.forEach(m => m.addEventListener('change', syncSettle));
+    syncSettle();
+  }
+})();
+</script>
+</body>
+</html>
